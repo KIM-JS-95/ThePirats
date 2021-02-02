@@ -30,6 +30,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1nNGKURNuOFRkOA8EULZsnBQktD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,5 +83,8 @@
       <updated>1611223071004</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
