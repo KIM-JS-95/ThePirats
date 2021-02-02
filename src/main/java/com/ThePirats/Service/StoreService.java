@@ -30,33 +30,17 @@ public class StoreService {
     public Store saveholiday(HolydayRequest request) {
 
         Long id = request.getId();
-        List holidays = request.getHolidays();
+        String[] holidays = request.getHolidays();
 
-        Store store=storeRepository.findById(request.getId()).orElseThrow(() -> new IllegalArgumentException("해당 게시슬이 없습니다. id =" +id));
+        Store store=storeRepository.findById(id)
+                        .orElseThrow(() -> new IllegalArgumentException("해당 게시슬이 없습니다. id =" +id));
 
-        return storeRepository.findById(request.getId())
-                .map(entity -> {
-                    entity
-                            .setName(store.getName())
-                            .setOwner(store.getOwner())
-                            .setDescription(store.getDescription())
-                            .setLevel(store.getLevel())
-                            .setAddress(store.getAddress())
-                            .setBusinessTimes(store.getBusinessTimes())
-                            .setHolydays(holidays)
-                            ;
-                return  entity;
-                })
-                .map(newEntityItem -> storeRepository.save(newEntityItem))
-                .orElseThrow(() -> new IllegalArgumentException("해당 게시슬이 없습니다. id =" +id));
-//        Store.update(holidays);
-//
-//
-//
-//
-//        //body.update(holidays);
-//
-//        return id;
+        store.setHolidays(holidays);
+
+        storeRepository.save(store);
+
+
+        return store;
     }
 
 

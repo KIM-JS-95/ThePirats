@@ -1,13 +1,10 @@
 package com.ThePirats.Controller;
 
 import com.ThePirats.Entity.Dto.HolydayRequest;
-import com.ThePirats.Entity.Holydays;
 import com.ThePirats.Entity.Store;
 import com.ThePirats.Service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController

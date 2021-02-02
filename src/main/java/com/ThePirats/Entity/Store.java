@@ -7,10 +7,10 @@ import java.util.List;
 
 @Entity
 @Data
-@Builder
+@NoArgsConstructor
 @Getter
 @Setter
-@ToString(exclude = {"holydays"})
+//@ToString(exclude = {"holydays"})
 public class Store {
 
     @Id
@@ -31,13 +31,13 @@ public class Store {
     @JoinColumn(name = "store_id", referencedColumnName = "Id")
     List<businessTimes> businessTimes;
 
-    @JoinColumn(name = "store_id", referencedColumnName = "Id")
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
-    List<Holydays> holydays;
 
-    public void update(List holydays) {
-        this.holydays=holydays;
-    }
+   // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    @Column(name="holidays", columnDefinition="varchar(255)")
+    //@JoinColumn(name = "store_id", referencedColumnName = "Id")
+    private String[] holidays;
+
+
 
     public Long getId() {
         return id;

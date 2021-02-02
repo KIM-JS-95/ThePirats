@@ -1,5 +1,7 @@
 com/ThePirats/Application.java
  com.ThePirats.Application
+com/ThePirats/Entity/Store.java
+ com.ThePirats.Entity.Store
 com/ThePirats/repository/StoreRepository.java
  com.ThePirats.repository.StoreRepository
 com/ThePirats/Entity/businessTimes.java
@@ -7,17 +9,13 @@ com/ThePirats/Entity/businessTimes.java
 com/ThePirats/Entity/Dto/HolydayResponse.java
  com.ThePirats.Entity.Dto.HolydayResponse
  com.ThePirats.Entity.Dto.HolydayResponse$HolydayResponseBuilder
+com/ThePirats/Entity/Holidays.java
+ com.ThePirats.Entity.Holidays
 com/ThePirats/repository/HolydayRepository.java
  com.ThePirats.repository.HolydayRepository
 com/ThePirats/Entity/Dto/HolydayRequest.java
  com.ThePirats.Entity.Dto.HolydayRequest
- com.ThePirats.Entity.Dto.HolydayRequest$HolydayRequestBuilder
-com/ThePirats/Entity/Holydays.java
- com.ThePirats.Entity.Holydays
 com/ThePirats/Service/StoreService.java
  com.ThePirats.Service.StoreService
-com/ThePirats/Entity/Store.java
- com.ThePirats.Entity.Store
- com.ThePirats.Entity.Store$StoreBuilder
 com/ThePirats/Controller/EmployeeController.java
  com.ThePirats.Controller.EmployeeController

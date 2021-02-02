@@ -1,25 +1,23 @@
 package com.ThePirats.Entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-@ToString(exclude ={"store"})
-public class Holydays {
-
+public class Holidays {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String holyday;
+    String holyday;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Store store;
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Store store;
 
     public Long getId() {
         return id;
@@ -37,11 +35,11 @@ public class Holydays {
         this.holyday = holyday;
     }
 
-    public Store getStore() {
-        return store;
-    }
-
-    public void setStore(Store store) {
-        this.store = store;
-    }
+//    public Store getStore() {
+//        return store;
+//    }
+//
+//    public void setStore(Store store) {
+//        this.store = store;
+//    }
 }

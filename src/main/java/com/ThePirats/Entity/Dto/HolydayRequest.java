@@ -11,12 +11,12 @@ import java.util.List;
 
 @Data
 @Getter
-@Builder
+
 public class HolydayRequest {
 
     private Long Id;
 
-    private List holidays;
+    private String[] holidays;
 
 
     public Long getId() {
@@ -28,11 +28,4 @@ public class HolydayRequest {
     }
 
 
-    public List getHolidays() {
-        return holidays;
-    }
-
-    public void setHolidays(List holidays) {
-        this.holidays = holidays;
-    }
 }
