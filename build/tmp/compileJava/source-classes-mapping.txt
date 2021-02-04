@@ -1,21 +1,23 @@
 com/ThePirats/Application.java
  com.ThePirats.Application
-com/ThePirats/Entity/Store.java
- com.ThePirats.Entity.Store
+com/ThePirats/Entity/Dto/HolydayRequest.java
+ com.ThePirats.Entity.Dto.HolydayRequest
+com/ThePirats/function/SearchRequest.java
+ com.ThePirats.function.SearchRequest
 com/ThePirats/repository/StoreRepository.java
  com.ThePirats.repository.StoreRepository
-com/ThePirats/Entity/businessTimes.java
- com.ThePirats.Entity.businessTimes
+com/ThePirats/Entity/Store.java
+ com.ThePirats.Entity.Store
 com/ThePirats/Entity/Dto/HolydayResponse.java
  com.ThePirats.Entity.Dto.HolydayResponse
  com.ThePirats.Entity.Dto.HolydayResponse$HolydayResponseBuilder
-com/ThePirats/Entity/Holidays.java
- com.ThePirats.Entity.Holidays
-com/ThePirats/repository/HolydayRepository.java
- com.ThePirats.repository.HolydayRepository
-com/ThePirats/Entity/Dto/HolydayRequest.java
- com.ThePirats.Entity.Dto.HolydayRequest
-com/ThePirats/Service/StoreService.java
- com.ThePirats.Service.StoreService
+com/ThePirats/repository/BusinessTimeRepository.java
+ com.ThePirats.repository.BusinessTimeRepository
+com/ThePirats/Entity/businessTimes.java
+ com.ThePirats.Entity.businessTimes
 com/ThePirats/Controller/EmployeeController.java
  com.ThePirats.Controller.EmployeeController
+com/ThePirats/Service/StoreService.java
+ com.ThePirats.Service.StoreService
+com/ThePirats/function/SearchResponse.java
+ com.ThePirats.function.SearchResponse

@@ -1,9 +1,6 @@
 package com.ThePirats.Entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,18 +9,22 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-//@ToString(exclude = {"store"})
+@AllArgsConstructor
+@Getter
+@Setter
 public class businessTimes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private  Long id;
 
-    String day;
+    private String day;
 
-    String open;
+    private String open;
 
-    String close;
+    private String close;
+
+
 
     public Long getId() {
         return id;
@@ -56,4 +57,5 @@ public class businessTimes {
     public void setClose(String close) {
         this.close = close;
     }
+
 }

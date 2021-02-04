@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b2b173b-d228-4d65-bbf9-6df5f2b6e999" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,19 +13,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Dto/HolydayRequest$HolydayRequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Dto/HolydayRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Dto/HolydayRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Holydays.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Store$StoreBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/Holidays.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/businessTimes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Entity/businessTimes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Service/StoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/repository/HolydayRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Dto/HolydayRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Dto/HolydayRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Holydays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Holidays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/Holidays.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/businessTimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Entity/businessTimes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/repository/HolydayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/repository/HolydayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/repository/HolydayRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/repository/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/repository/StoreRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
