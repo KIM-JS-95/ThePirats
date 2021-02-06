@@ -1,13 +1,12 @@
 package com.ThePirats.Controller;
 
-import com.ThePirats.Entity.Dto.HolydayRequest;
+import com.ThePirats.Entity.Dto.Reaponse.StoreDetailResponse;
+import com.ThePirats.Entity.Dto.Request.HolydayRequest;
+import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
 import com.ThePirats.Entity.Store;
-import com.ThePirats.Entity.businessTimes;
 import com.ThePirats.Service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -47,12 +46,18 @@ public class EmployeeController {
 
     //가게 목록 조회
     @GetMapping("/status/{id}")
-    public String status(@PathVariable Long id){
+    public StoreApiResponse status(@PathVariable Long id){
 
-
-        storeService.status(id);
+        // storeService.status(id);
 
         //System.out.println(time.SearchRequest());
         return storeService.status(id);
+    }
+
+    //가게 목록 상세 조회
+    @GetMapping("/status/detail/{id}")
+    public StoreDetailResponse detail(@PathVariable Long id){
+
+        return storeService.detail(id);
     }
 }

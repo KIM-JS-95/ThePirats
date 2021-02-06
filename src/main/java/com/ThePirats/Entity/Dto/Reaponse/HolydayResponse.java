@@ -1,4 +1,4 @@
-package com.ThePirats.Entity.Dto;
+package com.ThePirats.Entity.Dto.Reaponse;
 
 
 import lombok.AllArgsConstructor;

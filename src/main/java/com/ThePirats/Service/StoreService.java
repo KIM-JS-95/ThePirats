@@ -1,10 +1,12 @@
 package com.ThePirats.Service;
 
-import com.ThePirats.Entity.Dto.HolydayRequest;
+import com.ThePirats.Entity.Dto.Reaponse.StoreDetailResponse;
+import com.ThePirats.Entity.Dto.Request.HolydayRequest;
+import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
+import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
 import com.ThePirats.function.SearchRequest;
 import com.ThePirats.function.SearchResponse;
 import com.ThePirats.Entity.Store;
-import com.ThePirats.Entity.businessTimes;
 import com.ThePirats.repository.BusinessTimeRepository;
 import com.ThePirats.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +24,6 @@ public class StoreService {
 
     @Autowired
     private BusinessTimeRepository businessTimeRepository;
-
 
     @Transactional
     public Store save(Store store){
@@ -60,15 +61,54 @@ public class StoreService {
     }
 
     @Transactional
-    public String status(Long id) {
+    public StoreApiResponse status(Long id) {
        List<String> entity = businessTimeRepository.findByStoreId(id);
-               //.orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
-        String arr = SearchRequest.nowTime();
+       Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
+        //.orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+        String arr = SearchRequest.nowTime();
         String arr1 = SearchResponse.Open(arr, entity ,id);
 
+        StoreApiResponse response =StoreApiResponse.builder()
+                .name(store.getName())
+                .description(store.getDescription())
+                .level(store.getLevel())
+                .businessStatus(arr1)
+                .build();
 
-        return arr1;
+        return response;
     }
+
+    @Transactional
+    public StoreDetailResponse detail(Long id) {
+        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+
+
+       // StoreDetailRequest.status(id);
+
+        StoreDetailResponse response = StoreDetailResponse.builder()
+                .id(store.getId())
+                .name(store.getName())
+                .description(store.getDescription())
+                .level(store.getLevel())
+                .address(store.getAddress())
+                .phone(store.getPhone())
+                .businessDays(store.getBusinessTimes())
+                .build();
+
+        return response;
+    }
+
+//    private StoreDetailRequest request(Long id){
+//
+//         businessTimeRepository.findByStoreId(id)
+//                 .map(entity -> {
+//                     businessTimeRepository.findByStoreId(entity);
+//                 return entity;
+//                 })
+//                 .orElseGet(()-> "ss");
+//         return null;
+//
+//    }
 
 }

@@ -23,21 +23,21 @@ public class Store {
 
     private String description;
 
-    int level;
+    private int level;
 
     private String address;
 
+    private String phone;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "store_id", referencedColumnName = "Id")
-    List<businessTimes> businessTimes;
+    private List<businessTimes> businessTimes;
 
 
    // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
     @Column(name="holidays", columnDefinition="varchar(255)")
     //@JoinColumn(name = "store_id", referencedColumnName = "Id")
     private String[] holidays;
-
-
 
     public Long getId() {
         return id;
@@ -51,7 +51,7 @@ public class Store {
         return name;
     }
 
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -87,14 +87,19 @@ public class Store {
         this.address = address;
     }
 
-    public List<businessTimes> getBusinessTime() {
-        return businessTimes;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setBusinessTime(List<businessTimes> businessTime) {
-        this.businessTimes = businessTimes;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
+    public String[] getHolidays() {
+        return holidays;
+    }
 
-
+    public void setHolidays(String[] holidays) {
+        this.holidays = holidays;
+    }
 }

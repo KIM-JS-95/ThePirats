@@ -1,4 +1,4 @@
-package com.ThePirats.Entity.Dto;
+package com.ThePirats.Entity.Dto.Request;
 
 import com.ThePirats.Entity.Store;
 import lombok.*;
