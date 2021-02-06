@@ -68,7 +68,7 @@ public class StoreService {
         String arr1 = SearchResponse.Open(arr, entity ,id);
 
 
-        return "1";
+        return arr1;
     }
 
 }

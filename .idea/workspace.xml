@@ -14,6 +14,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/function/SearchResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/function/SearchResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/function/SearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/function/SearchResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,5 +112,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ThePirats$Application.ic" NAME="Application Coverage Results" MODIFIED="1612592932824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ThePirats.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -13,10 +13,10 @@ com/ThePirats/Entity/Dto/HolydayResponse.java
  com.ThePirats.Entity.Dto.HolydayResponse$HolydayResponseBuilder
 com/ThePirats/repository/BusinessTimeRepository.java
  com.ThePirats.repository.BusinessTimeRepository
-com/ThePirats/Entity/businessTimes.java
- com.ThePirats.Entity.businessTimes
 com/ThePirats/Controller/EmployeeController.java
  com.ThePirats.Controller.EmployeeController
+com/ThePirats/Entity/businessTimes.java
+ com.ThePirats.Entity.businessTimes
 com/ThePirats/Service/StoreService.java
  com.ThePirats.Service.StoreService
 com/ThePirats/function/SearchResponse.java

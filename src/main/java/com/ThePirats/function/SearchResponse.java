@@ -3,10 +3,12 @@ package com.ThePirats.function;
 import com.ThePirats.Entity.businessTimes;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SearchResponse {
 
+    private static String status;
     //SimpleDateFormat format1 = new SimpleDateFormat( "EE:HH:mm:ss");
     public static String Open(String time, List<String> arr, Long id){
 
@@ -18,17 +20,29 @@ public class SearchResponse {
 
         // 스트림 활용할것
         // .forEach(System.out::println);
-        Stream<String> strStream1 = arr.stream().filter(a ->a.contains("Thu"))
-                .map(s -> s.substring(s.length()-6,s.length()-2));
-        strStream1
-                .map( if(strStream1)).forEach(System.out::println);
+        try{
+            List<String> strStream1 = arr.stream().filter(a ->a.contains("Mon")) //day
+                    .map(s -> s.substring(s.length()-7,s.length()-2)).collect(Collectors.toList());
 
 
 
+        //open
+        //System.out.println(strStream1.get(0));
 
+        int compare = strStream1.get(0).compareTo(times);
 
+       // System.out.println(compare);
 
+        if(compare <=0 ) {
+           status = "OPEN";
+        }else{
+            status ="CLOSE";
+        }
 
-        return "gogo";
+        }catch (Exception e){
+            return "CLOSE";
+        }
+
+        return status;
     }
 }
