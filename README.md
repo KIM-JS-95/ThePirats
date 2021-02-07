@@ -30,7 +30,7 @@ E. [점포 삭제 API][점포-삭제-API]
 
 ###🍔 DB MODELING
 
-<img src="/C:/Users/JAESEUNG/IdeaProjects/ThePirats/src/main/resources/image/ThePirats.png" width="80%" height="50%"></img>
+<img src="https://user-images.githubusercontent.com/65659478/107150830-1a7e4280-69a3-11eb-99fd-6b194f0992e6.png" width="80%" height="50%"></img>
 
 1:N 매핑으로 [점포 추가 API][점포추가-API] 할경우 동시적으로 BUSINESSTIMES 데이터 가 추가되도록 구성
 테이블의 활용을 고려하여 양방향 보다는 단방향으로 구성함
@@ -45,7 +45,7 @@ i. 아래 두 점포의 요청 파라미터를 전달 받아 DB에 저장
 
 ii. 요청 파라미터
 
-<img src="/C:/Users/JAESEUNG/IdeaProjects/ThePirats/src/main/resources/image/1.png" width="90%" height="30%"></img>
+<img src="https://user-images.githubusercontent.com/65659478/107150824-17835200-69a3-11eb-8e91-fc9a2799b537.png" height="30%"></img>
 
 
 
@@ -66,7 +66,7 @@ ii. 요청 파라미터
 
  인어수산(id : 1)의 휴무일은 2021-01-21(목), 2021-01-22(금)
 
-<img src="/C:/Users/JAESEUNG/IdeaProjects/ThePirats/src/main/resources/image/2.png" width="40%" height="30%"></img>
+<img src="https://user-images.githubusercontent.com/65659478/107150825-18b47f00-69a3-11eb-8310-03266af37e41.png" width="40%" height="30%"></img>
 
 
 
@@ -86,7 +86,7 @@ i. 점포명, 점포 설명, 영업상태(영업중/영업종료/휴무) 정보�
 
 ii. 응답
 
-<img src="/C:/Users/JAESEUNG/IdeaProjects/ThePirats/src/main/resources/image/3.png" width="90%" height="30%"></img>
+<img src="https://user-images.githubusercontent.com/65659478/107150826-19e5ac00-69a3-11eb-974d-6edbd42c8cb2.png" width="90%" height="30%"></img>
 
 
 
