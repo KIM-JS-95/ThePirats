@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -64,8 +65,6 @@ public class StoreService {
     public StoreApiResponse status(Long id) {
        List<String> entity = businessTimeRepository.findByStoreId(id);
        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
-
-        //.orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
         String arr = SearchRequest.nowTime();
         String arr1 = SearchResponse.Open(arr, entity ,id);
 
@@ -83,8 +82,10 @@ public class StoreService {
     public StoreDetailResponse detail(Long id) {
         Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
-
-       // StoreDetailRequest.status(id);
+        List<StoreDetailRequest> detailRequest = businessTimeRepository.findByDetail(id).stream()
+                .map(
+                        StoreDetailRequest::new)
+                .collect(Collectors.toList());
 
         StoreDetailResponse response = StoreDetailResponse.builder()
                 .id(store.getId())
@@ -93,7 +94,7 @@ public class StoreService {
                 .level(store.getLevel())
                 .address(store.getAddress())
                 .phone(store.getPhone())
-                .businessDays(store.getBusinessTimes())
+                .businessDays(detailRequest)
                 .build();
 
         return response;

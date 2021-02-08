@@ -3,10 +3,13 @@ package com.ThePirats.Controller;
 import com.ThePirats.Entity.Dto.Reaponse.StoreDetailResponse;
 import com.ThePirats.Entity.Dto.Request.HolydayRequest;
 import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
+import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
 import com.ThePirats.Entity.Store;
 import com.ThePirats.Service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController

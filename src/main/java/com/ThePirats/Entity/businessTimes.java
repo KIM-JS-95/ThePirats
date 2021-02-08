@@ -9,6 +9,9 @@ import javax.persistence.Id;
 
 @Entity
 @Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class businessTimes {
 
     @Id

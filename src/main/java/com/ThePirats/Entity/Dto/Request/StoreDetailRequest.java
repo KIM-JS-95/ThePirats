@@ -1,21 +1,18 @@
 package com.ThePirats.Entity.Dto.Request;
 
-
+import com.ThePirats.Entity.Store;
+import com.ThePirats.Entity.businessTimes;
 import com.ThePirats.function.SearchRequest;
 import com.ThePirats.function.SearchResponse;
-import com.ThePirats.repository.BusinessTimeRepository;
-import lombok.Builder;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class StoreDetailRequest{
-
-    @Autowired
-   private static BusinessTimeRepository businessTimeRepository;
+public class StoreDetailRequest {
 
     private String day;
 
@@ -23,13 +20,12 @@ public class StoreDetailRequest{
 
     private String close;
 
-   // private String status = "sss";
+    private String status ="cc";
 
-
-
-//        List<String> entity = businessTimeRepository.findByStoreId(id);
-//        String arr = SearchRequest.nowTime();
-//        String status = SearchResponse.Open(arr, entity ,id);
-
+    public StoreDetailRequest(businessTimes entity) {
+        this.day = entity.getDay();
+        this.open = entity.getOpen();
+        this.close = entity.getClose();
+    }
 
 }

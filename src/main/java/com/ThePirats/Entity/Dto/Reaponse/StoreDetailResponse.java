@@ -3,10 +3,7 @@ package com.ThePirats.Entity.Dto.Reaponse;
 
 import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
 import com.ThePirats.Entity.businessTimes;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
@@ -34,6 +31,6 @@ public class StoreDetailResponse {
 
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 //    @JoinColumn(name = "store_id", referencedColumnName = "Id")
-    private List<businessTimes> businessDays;
+    private List<StoreDetailRequest> businessDays;
 
 }
