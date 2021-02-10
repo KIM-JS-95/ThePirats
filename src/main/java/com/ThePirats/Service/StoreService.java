@@ -83,9 +83,16 @@ public class StoreService {
         Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
         List<StoreDetailRequest> detailRequest = businessTimeRepository.findByDetail(id).stream()
-                .map(
-                        StoreDetailRequest::new)
+                .map(entity -> {
+                    entity
+                            .setDay(store.getBusinessTimes())
+                            .setOpen()
+
+                })
                 .collect(Collectors.toList());
+
+
+
 
         StoreDetailResponse response = StoreDetailResponse.builder()
                 .id(store.getId())
