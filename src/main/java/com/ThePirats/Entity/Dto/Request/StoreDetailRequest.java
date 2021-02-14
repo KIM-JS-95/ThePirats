@@ -12,6 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class StoreDetailRequest {
 
     private String day;
@@ -20,7 +22,7 @@ public class StoreDetailRequest {
 
     private String close;
 
-    private String status ="cc";
+    private String status;
 
     public StoreDetailRequest(businessTimes entity) {
         this.day = entity.getDay();

@@ -1,9 +1,9 @@
 package com.ThePirats.Service;
 
-import com.ThePirats.Entity.Dto.Reaponse.StoreDetailResponse;
 import com.ThePirats.Entity.Dto.Request.HolydayRequest;
 import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
 import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
+import com.ThePirats.Entity.businessTimes;
 import com.ThePirats.function.SearchRequest;
 import com.ThePirats.function.SearchResponse;
 import com.ThePirats.Entity.Store;
@@ -79,33 +79,30 @@ public class StoreService {
     }
 
     @Transactional
-    public StoreDetailResponse detail(Long id) {
-        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+    public List<businessTimes> detail(Long id) {
+       // Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
-        List<StoreDetailRequest> detailRequest = businessTimeRepository.findByDetail(id).stream()
-                .map(entity -> {
-                    entity
-                            .setDay(store.getBusinessTimes())
-                            .setOpen()
-
-                })
-                .collect(Collectors.toList());
+        businessTimes requests = businessTimeRepository.findByDetail(id);
 
 
 
+        return  businessTimeRepository.findByDetail(id);
 
-        StoreDetailResponse response = StoreDetailResponse.builder()
-                .id(store.getId())
-                .name(store.getName())
-                .description(store.getDescription())
-                .level(store.getLevel())
-                .address(store.getAddress())
-                .phone(store.getPhone())
-                .businessDays(detailRequest)
-                .build();
 
-        return response;
+//        StoreDetailResponse response = StoreDetailResponse.builder()
+//                .id(store.getId())
+//                .name(store.getName())
+//                .description(store.getDescription())
+//                .level(store.getLevel())
+//                .address(store.getAddress())
+//                .phone(store.getPhone())
+//                .businessDays(detailRequest)
+//                .build();
+
     }
+
+
+
 
 //    private StoreDetailRequest request(Long id){
 //
