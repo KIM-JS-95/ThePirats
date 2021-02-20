@@ -61,6 +61,6 @@ public class EmployeeController {
     @GetMapping("/status/detail/{id}")
     public List<StoreDetailRequest> detail(@PathVariable Long id){
 
-        return storeService.detail(id);
+        return storeService.Holydaydetail(id);
     }
 }

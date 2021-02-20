@@ -27,12 +27,14 @@ public class StoreService {
     @Autowired
     private BusinessTimeRepository businessTimeRepository;
 
+    // Q. A : Saving Store API
     @Transactional
     public Store save(Store store){
         store = storeRepository.save(store);
         return store;
     }
 
+    // Q. B : Saving holiday API
     @Transactional
     public Store saveholiday(HolydayRequest request) {
 
@@ -49,31 +51,20 @@ public class StoreService {
     }
 
 
-    @Transactional
-    public void delete(Long id){
-        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
-        storeRepository.delete(store);
-    }
-
-
     // Q. C :  Searching Store index API
     @Transactional
     public StoreApiResponse status(Long id) {
-       List<String> entity = businessTimeRepository.findByStoreId(id);
        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
-        String arr = SearchRequest.nowTime();
-        String arr1 = SearchResponse.Open(arr, entity ,id);
 
         StoreApiResponse response =StoreApiResponse.builder()
                 .name(store.getName())
                 .description(store.getDescription())
                 .level(store.getLevel())
-                .businessStatus(arr1)
+                .businessStatus(time(id))
                 .build();
 
         return response;
     }
-
 
     // Q. D :  Searching detail Store index API
     @Transactional
@@ -86,14 +77,23 @@ public class StoreService {
                 .level(store.getLevel())
                 .address(store.getAddress())
                 .phone(store.getPhone())
-                .businessDays(detail(id))
+                .businessDays(Holydaydetail(id))
                 .build();
 
         return response;
     }
 
+    // Q. E : Delete API
+    @Transactional
+    public void delete(Long id){
+        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+        storeRepository.delete(store);
+    }
 
-    public List<StoreDetailRequest> detail(Long id) {
+
+
+
+    public List<StoreDetailRequest> Holydaydetail(Long id) {
         List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
         return request.stream().map( item->{
@@ -106,6 +106,12 @@ public class StoreService {
                             return requests;
                 }).collect(Collectors.toList());
     }
+
+
+
+
+
+
 
     public String time(Long id){
         List<String> entity = businessTimeRepository.findByStoreId(id);
