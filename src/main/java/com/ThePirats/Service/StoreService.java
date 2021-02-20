@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -79,27 +79,21 @@ public class StoreService {
     }
 
     @Transactional
-    public List<businessTimes> detail(Long id) {
-       // Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+    public StoreDetailRequest detail(Long id) {
+        //Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
-        businessTimes requests = businessTimeRepository.findByDetail(id);
+      List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
+      StoreDetailRequest requests = StoreDetailRequest.builder()
+//              .day(request.getDay())
+//              .open(request.getOpen())
+//              .close(request.getClose())
+              .status("today is Open")
+              .build();
 
-
-        return  businessTimeRepository.findByDetail(id);
-
-
-//        StoreDetailResponse response = StoreDetailResponse.builder()
-//                .id(store.getId())
-//                .name(store.getName())
-//                .description(store.getDescription())
-//                .level(store.getLevel())
-//                .address(store.getAddress())
-//                .phone(store.getPhone())
-//                .businessDays(detailRequest)
-//                .build();
-
+        return requests;
     }
+
 
 
 

@@ -19,6 +19,6 @@ public interface BusinessTimeRepository extends JpaRepository<businessTimes, Lon
 
     @Modifying
     @Query(value = "select * from business_Times where store_id= :id", nativeQuery = true)
-    businessTimes findByDetail(Long id);
+    List<businessTimes> findByDetail(Long id);
 
 }
