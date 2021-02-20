@@ -60,7 +60,7 @@ public class EmployeeController {
 
     //가게 목록 상세 조회
     @GetMapping("/status/detail/{id}")
-    public StoreDetailRequest detail(@PathVariable Long id){
+    public List<StoreDetailRequest> detail(@PathVariable Long id){
 
         return storeService.detail(id);
     }

@@ -6,7 +6,9 @@ import com.ThePirats.repository.BusinessTimeRepository;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 public class StoreServiceTest {
@@ -18,14 +20,8 @@ public class StoreServiceTest {
     public void main(String[] args){
 
         Long id =1L;
-        businessTimes request = businessTimeRepository.findByDetail(id);
-        StoreDetailRequest requests = StoreDetailRequest.builder()
-                .day(request.getDay())
-                .open(request.getOpen())
-                .close(request.getClose())
-                .status("today is Open")
-                .build();
+        List<businessTimes> request = businessTimeRepository.findByDetail(id);
+        request.stream().map(StoreDetailRequest::new).collect(Collectors.toList()).forEach(System.out::println);
 
-        System.out.println(requests);
     }
 }

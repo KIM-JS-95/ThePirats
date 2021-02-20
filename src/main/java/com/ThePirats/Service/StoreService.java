@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -79,19 +80,13 @@ public class StoreService {
     }
 
     @Transactional
-    public StoreDetailRequest detail(Long id) {
+    public List<StoreDetailRequest> detail(Long id) {
         //Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
       List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
-      StoreDetailRequest requests = StoreDetailRequest.builder()
-//              .day(request.getDay())
-//              .open(request.getOpen())
-//              .close(request.getClose())
-              .status("today is Open")
-              .build();
 
-        return requests;
+        return request.stream().map(StoreDetailRequest::new).collect(Collectors.toList());
     }
 
 
