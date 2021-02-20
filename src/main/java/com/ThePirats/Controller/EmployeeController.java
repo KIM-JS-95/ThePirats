@@ -5,7 +5,6 @@ import com.ThePirats.Entity.Dto.Request.HolydayRequest;
 import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
 import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
 import com.ThePirats.Entity.Store;
-import com.ThePirats.Entity.businessTimes;
 import com.ThePirats.Service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +42,7 @@ public class EmployeeController {
 
     //가게 목록 조회
     @GetMapping("{id}")
-    public Store findByStoreId(@PathVariable Long id){
+    public StoreDetailResponse findByStoreId(@PathVariable Long id){
         return storeService.findById(id);
     }
 

@@ -1,5 +1,6 @@
 package com.ThePirats.Service;
 
+import com.ThePirats.Entity.Dto.Reaponse.StoreDetailResponse;
 import com.ThePirats.Entity.Dto.Request.HolydayRequest;
 import com.ThePirats.Entity.Dto.Reaponse.StoreApiResponse;
 import com.ThePirats.Entity.Dto.Request.StoreDetailRequest;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -55,13 +55,8 @@ public class StoreService {
         storeRepository.delete(store);
     }
 
-    @Transactional
-    public Store findById(Long id) {
-        Store entity = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
-        return entity;
-    }
-
+    // Q. C :  Searching Store index API
     @Transactional
     public StoreApiResponse status(Long id) {
        List<String> entity = businessTimeRepository.findByStoreId(id);
@@ -79,30 +74,44 @@ public class StoreService {
         return response;
     }
 
+
+    // Q. D :  Searching detail Store index API
     @Transactional
-    public List<StoreDetailRequest> detail(Long id) {
-        //Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+    public StoreDetailResponse findById(Long id) {
+        Store store = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
 
-      List<businessTimes> request = businessTimeRepository.findByDetail(id);
+        StoreDetailResponse response =StoreDetailResponse.builder()
+                .name(store.getName())
+                .description(store.getDescription())
+                .level(store.getLevel())
+                .address(store.getAddress())
+                .phone(store.getPhone())
+                .businessDays(detail(id))
+                .build();
 
-
-        return request.stream().map(StoreDetailRequest::new).collect(Collectors.toList());
+        return response;
     }
 
 
+    public List<StoreDetailRequest> detail(Long id) {
+        List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
+        return request.stream().map( item->{
+                    StoreDetailRequest requests= StoreDetailRequest.builder()
+                            .day(item.getDay())
+                            .open(item.getOpen())
+                            .close(item.getClose())
+                            .status(time(id))
+                            .build();
+                            return requests;
+                }).collect(Collectors.toList());
+    }
 
-
-//    private StoreDetailRequest request(Long id){
-//
-//         businessTimeRepository.findByStoreId(id)
-//                 .map(entity -> {
-//                     businessTimeRepository.findByStoreId(entity);
-//                 return entity;
-//                 })
-//                 .orElseGet(()-> "ss");
-//         return null;
-//
-//    }
+    public String time(Long id){
+        List<String> entity = businessTimeRepository.findByStoreId(id);
+        String arr = SearchRequest.nowTime();
+        String arr1 = SearchResponse.Open(arr, entity ,id);
+        return arr1;
+    }
 
 }

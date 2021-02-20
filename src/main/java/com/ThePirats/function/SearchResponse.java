@@ -21,7 +21,7 @@ public class SearchResponse {
         // 스트림 활용할것
         // .forEach(System.out::println);
         try{
-            List<String> strStream1 = arr.stream().filter(a ->a.contains("Mon")) //day
+            List<String> strStream1 = arr.stream().filter(a ->a.contains("Thu")) //day
                     .map(s -> s.substring(s.length()-7,s.length()-2)).collect(Collectors.toList());
 
 

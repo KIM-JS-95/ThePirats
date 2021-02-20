@@ -13,8 +13,8 @@ com/ThePirats/repository/StoreRepository.java
  com.ThePirats.repository.StoreRepository
 com/ThePirats/Entity/Dto/Request/HolydayRequest.java
  com.ThePirats.Entity.Dto.Request.HolydayRequest
-com/ThePirats/function/SearchResponse.java
- com.ThePirats.function.SearchResponse
+com/ThePirats/repository/BusinessTimeRepository.java
+ com.ThePirats.repository.BusinessTimeRepository
 com/ThePirats/Entity/Dto/Reaponse/HolydayResponse.java
  com.ThePirats.Entity.Dto.Reaponse.HolydayResponse
  com.ThePirats.Entity.Dto.Reaponse.HolydayResponse$HolydayResponseBuilder
@@ -24,8 +24,8 @@ com/ThePirats/Entity/Dto/Reaponse/StoreApiResponse.java
 com/ThePirats/Entity/Dto/Request/StoreDetailRequest.java
  com.ThePirats.Entity.Dto.Request.StoreDetailRequest
  com.ThePirats.Entity.Dto.Request.StoreDetailRequest$StoreDetailRequestBuilder
-com/ThePirats/repository/BusinessTimeRepository.java
- com.ThePirats.repository.BusinessTimeRepository
+com/ThePirats/function/SearchResponse.java
+ com.ThePirats.function.SearchResponse
 com/ThePirats/Service/StoreService.java
  com.ThePirats.Service.StoreService
 com/ThePirats/Controller/EmployeeController.java
