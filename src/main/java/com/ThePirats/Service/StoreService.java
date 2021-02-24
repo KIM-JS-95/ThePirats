@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -108,15 +109,17 @@ public class StoreService {
 
 
 
-    public String timeList(Long id){
-        return "1";
-    }
-
     public String time(Long id){
-        List<String> entity = businessTimeRepository.findByStoreId(id);
-        String arr = SearchRequest.nowTime();
-        String arr1 = SearchResponse.Open(arr, entity);
-        return arr1;
+        List<String> entityTime = businessTimeRepository.findByStoreId(id);
+        ArrayList<String>  entityDate = storeRepository.findByHolidays(id);
+        System.out.println("stream");
+        for (String i : entityDate) {
+            System.out.println(i);
+        }
+        String time= SearchRequest.nowTime();
+        String date = SearchRequest.nowdate();
+        String arr1 = SearchResponse.Open(time, date,entityTime, entityDate);
+        return "arr1";
     }
 
 }

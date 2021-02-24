@@ -17,4 +17,15 @@ public class SearchRequest {
         return time1;
     }
 
+    public static String nowdate() {
+        //"yyyy-MM-dd HH:mm:ss"
+        SimpleDateFormat format1 = new SimpleDateFormat( "yyyy-MM-dd", new Locale("en", "US"));
+        Date time = new Date();
+        String time1 = format1.format(time);
+
+        // print now time and we
+        System.out.println(time1);
+        return time1;
+    }
+
 }
