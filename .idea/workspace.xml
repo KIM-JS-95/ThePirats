@@ -16,14 +16,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/Service/StoreService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/function/SearchResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ThePirats/function/SearchResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ThePirats/function/SearchResponseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ThePirats/function/SearchResponseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/Service/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ThePirats/function/SearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ThePirats/function/SearchResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ThePirats/function/SearchResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ThePirats/function/SearchResponseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +95,7 @@
       <recent name="com.ThePirats.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.SearchResponseTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ThePirats.Application" />
       <module name="ThePirats.main" />

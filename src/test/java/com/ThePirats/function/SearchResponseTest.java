@@ -1,65 +1,71 @@
 package com.ThePirats.function;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SearchResponseTest {
 
     private static String status;
 
     public static void main(String[] args) {
+
         List<String> arr = new ArrayList<>();
-
-
-        List<String> answer = new ArrayList<>();
-
         arr.add("1,23:00,Tuesday,13:00,1");
         arr.add("2,18:00,Wednesday,09:00,1");
         arr.add("3,23:00,Thursday,09:00,1");
         arr.add("4,23:00,Friday,09:00,1");
 
 
-
-            List<String> strStream1 = arr.stream()//.filter(a -> a.contains("Thu")) //day
+        List<String> strStream1 = arr.stream()//.filter(a -> a.contains("Thu")) //day
                     .map(s -> s.substring(s.length() - 7, s.length() - 2)).collect(Collectors.toList());
 
-            System.out.println("stream");
+        List<String> strStream2 = arr.stream()//.filter(a -> a.contains("Thu")) //day
+                .map(s -> s.substring(2, 7)).collect(Collectors.toList());
+
+//            System.out.println("stream");
+//            for (String i : strStream2) {
+//                System.out.println(i);
+//                // System.out.println(i.substring(i.length() - 7, i.length() - 2));
+//            }
 
 
-            for (String i : strStream1) {
-                System.out.println(i);
-                // System.out.println(i.substring(i.length() - 7, i.length() - 2));
-            }
+        String t1 = "19:00"; //now
+        String t2 = "00:00"; //open
+        String t3 = "18:00"; //close
+
+        String date = "2021-01-24";
+
+//        System.out.println(t1.compareTo(t2)); //open
+//       System.out.println(t1.compareTo(t3)); //close
+//        System.out.println(times1.compareTo(times3)); //close
+
+        String[] holidays={"2021-01-21", "2021-01-22"};
+
+        int index = Arrays.binarySearch(holidays,date);
+
+        //System.out.println(index);
 
 
             for (int i = 0; i < strStream1.size(); i++) {
-
-                String times = "09:00";
-                int compare = strStream1.get(i).compareTo(times);
-               // System.out.println(compare);
-//                System.out.println("!!!!!!");
-//                System.out.println(strStream1.get(0));
-
-                if (compare <= 0) {
+                if(index<0) {
+                int open = t1.compareTo(strStream1.get(i));
+                int close = t1.compareTo(strStream2.get(i));
+//휴가 넣어야함
+                if (open >= 0 && close < 0) {
                     status = "OPEN";
                 } else {
                     status = "CLOSE";
                 }
-
+                System.out.println(open);
+                System.out.println(close);
                 System.out.println(status);
-                answer.add(status);
-
-            }
-
-
-//            catch(Exception e){
-//                System.out.println("occurred bug");
-//            }
-
-
-
+            }else{
+                    status="HOLIDAY";
+                    System.out.println(status);
+                }
+        }
     }
 }
 
