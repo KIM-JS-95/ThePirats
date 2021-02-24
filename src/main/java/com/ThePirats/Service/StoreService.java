@@ -91,8 +91,7 @@ public class StoreService {
     }
 
 
-
-
+// 별도의 time class를 만들어 줘야함
     public List<StoreDetailRequest> Holydaydetail(Long id) {
         List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
@@ -109,14 +108,14 @@ public class StoreService {
 
 
 
-
-
-
+    public String timeList(Long id){
+        return "1";
+    }
 
     public String time(Long id){
         List<String> entity = businessTimeRepository.findByStoreId(id);
         String arr = SearchRequest.nowTime();
-        String arr1 = SearchResponse.Open(arr, entity ,id);
+        String arr1 = SearchResponse.Open(arr, entity);
         return arr1;
     }
 
