@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -32,5 +33,7 @@ public class StoreDetailResponse {
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 //    @JoinColumn(name = "store_id", referencedColumnName = "Id")
     private List<StoreDetailRequest> businessDays;
+
+    private ArrayList<String> holidays;
 
 }

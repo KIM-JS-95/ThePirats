@@ -31,11 +31,8 @@ public class SearchResponseTest {
 //            }
 
 
-        String t1 = "19:00"; //now
-        String t2 = "00:00"; //open
-        String t3 = "18:00"; //close
-
-        String date = "2021-01-24";
+        String t1 = "17:00"; //now
+        String date = "2021-02-26";
 
 //        System.out.println(t1.compareTo(t2)); //open
 //       System.out.println(t1.compareTo(t3)); //close

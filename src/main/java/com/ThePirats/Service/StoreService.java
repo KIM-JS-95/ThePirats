@@ -40,12 +40,17 @@ public class StoreService {
     public Store saveholiday(HolydayRequest request) {
 
         Long id = request.getId();
-        String[] holidays = request.getHolidays();
+        List<String> holidays = request.getHolidays();
+
+        System.out.println("holidays");
+        for (String i : holidays) {
+            System.out.println(i);
+        }
 
         Store store=storeRepository.findById(id)
                         .orElseThrow(() -> new IllegalArgumentException("해당 게시슬이 없습니다. id =" +id));
 
-        store.setHolidays(holidays);
+        store.setHolidays((ArrayList<String>) holidays);
         storeRepository.save(store);
 
         return store;
@@ -79,6 +84,7 @@ public class StoreService {
                 .address(store.getAddress())
                 .phone(store.getPhone())
                 .businessDays(Holydaydetail(id))
+                .holidays(store.getHolidays())
                 .build();
 
         return response;
@@ -92,7 +98,6 @@ public class StoreService {
     }
 
 
-// 별도의 time class를 만들어 줘야함
     public List<StoreDetailRequest> Holydaydetail(Long id) {
         List<businessTimes> request = businessTimeRepository.findByDetail(id);
 
@@ -108,18 +113,19 @@ public class StoreService {
     }
 
 
-
+// holiyday 저장 버그 개선
     public String time(Long id){
         List<String> entityTime = businessTimeRepository.findByStoreId(id);
-        ArrayList<String>  entityDate = storeRepository.findByHolidays(id);
+        Store  entityDate = storeRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id= " + id));
+
         System.out.println("stream");
-        for (String i : entityDate) {
+        for (String i : entityDate.getHolidays()) {
             System.out.println(i);
         }
         String time= SearchRequest.nowTime();
         String date = SearchRequest.nowdate();
-        String arr1 = SearchResponse.Open(time, date,entityTime, entityDate);
-        return "arr1";
+        String arr1 = SearchResponse.Open(time, date,entityTime, entityDate.getHolidays());
+        return arr1;
     }
 
 }

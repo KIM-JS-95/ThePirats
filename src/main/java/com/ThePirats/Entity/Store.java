@@ -3,6 +3,7 @@ package com.ThePirats.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,10 +35,18 @@ public class Store {
     private List<businessTimes> businessTimes;
 
 
-   // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    public ArrayList<String> getHolidays() {
+        return holidays;
+    }
+
+    public void setHolidays(ArrayList<String> holidays) {
+        this.holidays = holidays;
+    }
+
+    // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
     @Column(name="holidays", columnDefinition="varchar(255)")
     //@JoinColumn(name = "store_id", referencedColumnName = "Id")
-    private String[] holidays;
+    private ArrayList<String> holidays;
 
     public Long getId() {
         return id;
@@ -95,11 +104,5 @@ public class Store {
         this.phone = phone;
     }
 
-    public String[] getHolidays() {
-        return holidays;
-    }
 
-    public void setHolidays(String[] holidays) {
-        this.holidays = holidays;
     }
-}

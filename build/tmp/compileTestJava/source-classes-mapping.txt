@@ -1,4 +1,4 @@
-com/ThePirats/function/SearchResponseTest.java
- com.ThePirats.function.SearchResponseTest
 com/ThePirats/Service/StoreServiceTest.java
  com.ThePirats.Service.StoreServiceTest
+com/ThePirats/function/SearchResponseTest.java
+ com.ThePirats.function.SearchResponseTest
